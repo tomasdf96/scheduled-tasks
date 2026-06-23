@@ -5,7 +5,7 @@ import smtplib
 import os
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
-PASSWORD = os.environ.get("PASSWORD")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
 birthday_df = pd.read_csv("birthdays.csv")
 birthday_dict = birthday_df.to_dict(orient="records")
@@ -44,7 +44,7 @@ for (index, row) in birthday_df.iterrows():
             letter_body = letter.read()
             with smtplib.SMTP(host='smtp.gmail.com', port=587) as connection:
                 connection.starttls()
-                connection.login(MY_EMAIL, PASSWORD)
+                connection.login(MY_EMAIL, MY_PASSWORD)
                 connection.sendmail(
                     from_addr=MY_EMAIL,
                     to_addrs=row["email"],

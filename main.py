@@ -4,8 +4,8 @@ import random
 import smtplib
 import os
 
-MY_EMAIL = os.environ.get("tomaspython95@gmail.com")
-PASSWORD = os.environ.get("rjvxbpivylubtwnh")
+MY_EMAIL = os.environ.get("MY_EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
 
 birthday_df = pd.read_csv("birthdays.csv")
 birthday_dict = birthday_df.to_dict(orient="records")
